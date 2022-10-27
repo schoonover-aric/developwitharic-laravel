@@ -2,6 +2,7 @@
 
 @section('content')
     <section class="px-6 py-8">
+        <h1 class="text-ls font-bold mb-4">Publish New Post</h1>
         <x-panel class="max-w-lg mx-auto">
             <form method="POST" action="/admin/posts">
                 @csrf
