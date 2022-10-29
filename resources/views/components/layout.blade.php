@@ -22,6 +22,11 @@
             <div class="mt-8 md:mt-0 flex items-center">
                 @auth
                     <span class="text-lg font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+
+                    @if (Route::currentRouteName() != 'admin')
+                        <a href="/admin/posts/create" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Create Post</a>
+                    @endif
+
                     <form method="POST" action="/logout" class="text-lg font-semibold text-blue-500 ml-6">
                         @csrf
                         <button type="submit">Log Out</button>
