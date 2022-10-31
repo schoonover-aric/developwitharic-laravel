@@ -14,23 +14,48 @@
     <section class="px-6 py-8">
         <nav class="md:flex md:justify-between md:items-center">
             <div>
-                <a href="/">
-                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                <a href="/" class="text-xl font-bold flex px-5 border border-black rounded-xl">
+                    Develop With Aric
+                    <!-- <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16"> -->
                 </a>
             </div>
 
             <div class="mt-8 md:mt-0 flex items-center">
                 @auth
-                    <span class="text-lg font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+                    <x-dropdown>
+                        <x-slot name="trigger">
+                            <button class="text-xl font-bold flex">
+                                Welcome, {{ auth()->user()->name }}!&nbsp;<svg class="transform -rotate-90 pointer-events-none" style="right: 12px;" width="22" height="22" viewBox="4 0 22 22">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z"></path>
+                                        <path fill="#222" d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
+                                    </g>
+                                </svg>
+                            </button>
+                        </x-slot>
+                        <x-dropdown-item href="/admin/dashboard" class="ml-3 text-xs font-semibold py-3 px-5">
+                            Dashboard
+                        </x-dropdown-item>
+                        <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs('admin')" class="ml-3 text-xs font-semibold py-3 px-5">
+                            Create Post
+                        </x-dropdown-item>
+                        <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()" class="ml-3 text-xs font-semibold py-3 px-5">
+                            Log Out
+                        </x-dropdown-item>
+
+                        <form id="logout-form" method="POST" action="/logout" class="text-lg font-semibold text-blue-500 ml-6 hidden">
+                            @csrf
+                            <!-- <button type="submit">Log Out</button> -->
+                        </form>
+                    </x-dropdown>
+
+                    <!-- <span class="text-lg font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
 
                     @if (Route::currentRouteName() != 'admin')
                         <a href="/admin/posts/create" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Create Post</a>
-                    @endif
+                    @endif -->
 
-                    <form method="POST" action="/logout" class="text-lg font-semibold text-blue-500 ml-6">
-                        @csrf
-                        <button type="submit">Log Out</button>
-                    </form>
+                    
                 @else
                     <a href="/register" class="bg-yellow-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Register</a>
                     <a href="/login" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Log In</a>
