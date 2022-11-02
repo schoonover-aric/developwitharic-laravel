@@ -9,6 +9,14 @@
     html {
         scroll-behavior: smooth;
     }
+    .clamp {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .clamp.one-line {
+        -webkit-line-clamp: 1;
+    }
 </style>
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
@@ -33,7 +41,7 @@
                                 </svg>
                             </button>
                         </x-slot>
-                        <x-dropdown-item href="/admin/dashboard" class="ml-3 text-xs font-semibold py-3 px-5">
+                        <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')" class="ml-3 text-xs font-semibold py-3 px-5">
                             Dashboard
                         </x-dropdown-item>
                         <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs('admin')" class="ml-3 text-xs font-semibold py-3 px-5">
