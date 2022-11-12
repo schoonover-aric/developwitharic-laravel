@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Middleware;
+// namespace App\Http\Middleware;
 
-use Closure;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
+// use Closure;
+// use Illuminate\Http\Request;
+// use Symfony\Component\HttpFoundation\Response;
 
-class MustBeAdmin
-{
+// class MustBeAdmin
+// {
     /**
      * Handle an incoming request.
      *
@@ -15,12 +15,12 @@ class MustBeAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
-        if (auth()->user()?->username !== 'aric') {
-            abort(Response::HTTP_FORBIDDEN);
-        }
+    // public function handle(Request $request, Closure $next)
+    // {
+//         if (auth()->user()?->username !== 'aric') {
+//             abort(Response::HTTP_FORBIDDEN);
+//         }
 
-        return $next($request);
-    }
-}
+//         return $next($request);
+//     }
+// }
