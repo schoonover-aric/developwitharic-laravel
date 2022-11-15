@@ -6,7 +6,7 @@
         <div>
             {{-- ToDo --}}
             <!-- <img src="/images/illustration-3.png" alt="Blog Post illustration" class="rounded-xl"> -->
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog Post illustration" class="w-60 rounded-xl">
+            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog Post illustration" class="h-40 rounded-xl">
         </div>
 
         <div class="mt-8 flex flex-col justify-between">

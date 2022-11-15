@@ -22,7 +22,7 @@
     <section class="px-6 py-8">
         <nav class="md:flex md:justify-between md:items-center">
             <div>
-                <a href="/" class="bg-gray-200 hover:bg-gray-300 text-xl font-bold flex px-5 py-3 border border-black rounded-full">
+                <a href="/" class="bg-gray-100 transition-colors duration-300 hover:bg-gray-300 text-xl font-bold flex px-5 py-3 rounded-full">
                     Develop With Aric
                     <!-- <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16"> -->
                 </a>
@@ -32,7 +32,7 @@
                 @auth
                     <x-dropdown>
                         <x-slot name="trigger">
-                            <button class="text-xl font-bold flex hover:bg-gray-200 px-5 py-3 rounded-full">
+                            <button class="text-xl transition-colors duration-300 font-bold flex hover:bg-gray-200 px-5 py-3 rounded-full">
                                 Welcome, {{ auth()->user()->name }}!&nbsp;<svg class="transform -rotate-90 pointer-events-none" style="right: 12px;" width="22" height="22" viewBox="4 0 22 22">
                                     <g fill="none" fill-rule="evenodd">
                                         <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z"></path>
@@ -70,8 +70,9 @@
                     <a href="/register" class="bg-yellow-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Register</a>
                     <a href="/login" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Log In</a>
                 @endauth
-                <a href="#newsletter" class="bg-blue-500 hover:bg-blue-600 ml-6 rounded-full text-sm font-semibold text-white uppercase py-3 px-5">
-                    Subscribe for Updates
+                {{-- only show if not subscribed... --}}
+                <a href="#newsletter" class="text-xl transition-colors duration-300 text-blue-500 flex hover:bg-gray-200 px-5 py-3 rounded-full">
+                    Subscribe &#129063;
                 </a>
             </div>
         </nav>
@@ -80,10 +81,10 @@
 
         <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
             <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
-            <h5 class="text-3xl">Stay in touch with the latest posts</h5>
-            <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
+            <h5 class="text-3xl">Receive the latest news & info from <a href="#" class="font-bold text-slate-800">Develop With Aric</a></h5>
+            <p class="text-sm mt-6">Enter a valid email address to subscribe!</p>
 
-            <div class="mt-10">
+            <div class="mt-6">
                 <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
 
                     <form method="POST" action="/newsletter" class="lg:flex text-sm">
