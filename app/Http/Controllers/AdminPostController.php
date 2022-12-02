@@ -10,7 +10,7 @@ class AdminPostController extends Controller
     public function index()
     {
         return view('admin.posts.index', [
-            'posts' => Post::paginate(10)
+            'posts' => Post::latest()->paginate(10)
         ]);
     }
 
@@ -35,7 +35,8 @@ class AdminPostController extends Controller
 
         Post::create($attributes);
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Post Created!');
+        // return back()->with('success', 'Post Created!');
     }
 
     public function edit(Post $post)
@@ -70,3 +71,18 @@ class AdminPostController extends Controller
         return back()->with('success', 'Post Deleted!');
     }
 }
+
+/*
+***** What's the purpose of this file? *****
+
+app > Http > Controllers > AdminPostController.php = Admin Controller
+
+Controls all aspects of site Admin, such as:
+    -provide index view for admin page
+    -create/store new posts
+    -edit/update posts
+    -destroy/delete posts
+
+Laravel Controllers:
+    Instead of defining all of your request handling logic as closures in your route files, you may wish to organize this behavior using "controller" classes. Controllers can group related request handling logic into a single class. For example, a UserController class might handle all incoming requests related to users, including showing, creating, updating, and deleting users. By default, controllers are stored in the app/Http/Controllers directory.
+*/
