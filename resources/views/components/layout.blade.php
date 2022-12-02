@@ -45,7 +45,7 @@
                             <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')" class="ml-3 text-xs font-semibold py-3 px-5">
                                 Dashboard
                             </x-dropdown-item>
-                            <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs('admin')" class="ml-3 text-xs font-semibold py-3 px-5">
+                            <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')" class="ml-3 text-xs font-semibold py-3 px-5">
                                 Create Post
                             </x-dropdown-item>
                         @endadmin
@@ -81,6 +81,7 @@
 
         <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
             <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
+            {{-- <img src="/images/html-logo.jpg" alt="" class="mx-auto -mb-6" style="width: 145px;"> --}}
             <h5 class="text-3xl">Receive the latest news & info from <a href="#" class="font-bold text-slate-800">Develop With Aric</a></h5>
             <p class="text-sm mt-6">Enter a valid email address to subscribe!</p>
 
