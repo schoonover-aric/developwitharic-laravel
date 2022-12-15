@@ -23,7 +23,8 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/" class="bg-gray-100 transition-colors duration-300 hover:bg-gray-300 text-xl font-bold flex px-5 py-3 rounded-full">
-                    Develop With Aric
+                    Develop With Aric &nbsp; <span class="text-blue-500 font-bold">< /></span>
+                    {{-- <img src="/images/html-logo.jpg" alt="icky"> --}}
                     <!-- <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16"> -->
                 </a>
             </div>
@@ -80,8 +81,8 @@
         @yield('content')
 
         <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
-            <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
-            {{-- <img src="/images/html-logo.jpg" alt="" class="mx-auto -mb-6" style="width: 145px;"> --}}
+            {{-- <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto mb-6" style="width: 145px;"> --}}
+            <img src="/images/html-logo.jpg" alt="" class="mx-auto mb-6 rounded-xl" style="width: 145px;">
             <h5 class="text-3xl">Receive the latest news & info from <a href="#" class="font-bold text-slate-800">Develop With Aric</a></h5>
             <p class="text-sm mt-6">Enter a valid email address to subscribe!</p>
 
