@@ -1,8 +1,8 @@
 @extends('components/layout')
 
 @section('content')
-    <section class="px-6 py-8">
-        <main class="max-w-lg mx-auto mt-10">
+    <section class="px-6">
+        <main class="max-w-lg mx-auto mt-24">
             <x-panel>
                 <h1 class="text-center font-bold text-xl">Register!</h1>
 

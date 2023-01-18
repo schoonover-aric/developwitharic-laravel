@@ -19,10 +19,10 @@
     }
 </style>
 <body style="font-family: Open Sans, sans-serif">
-    <section class="px-6 py-8">
-        <nav class="md:flex md:justify-between md:items-center">
+    <section> <!-- class="p-6" -->
+        <nav class="fixed z-50 opacity-90 top-0 left-0 right-0 px-14 py-2 border-b-4 border-indigo-500 bg-indigo-200 md:flex md:justify-between md:items-center">
             <div>
-                <a href="/" class="bg-gray-100 transition-colors duration-300 hover:bg-gray-300 text-xl font-bold flex px-5 py-3 rounded-full">
+                <a href="/" class="transition-colors duration-300 hover:bg-gray-200 text-xl font-bold flex px-5 py-3 rounded-full">
                     Develop With Aric &nbsp; <span class="text-blue-500 font-bold">< /></span>
                     {{-- <img src="/images/html-logo.jpg" alt="icky"> --}}
                     <!-- <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16"> -->
@@ -43,14 +43,14 @@
                             </button>
                         </x-slot>
                         @admin
-                            <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')" class="ml-3 text-xs font-semibold py-3 px-5">
+                            <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')" class="text-xs font-semibold py-3 px-5">
                                 Dashboard
                             </x-dropdown-item>
-                            <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')" class="ml-3 text-xs font-semibold py-3 px-5">
+                            <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')" class="text-xs font-semibold py-3 px-5">
                                 Create Post
                             </x-dropdown-item>
                         @endadmin
-                        <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()" class="ml-3 text-xs font-semibold py-3 px-5">
+                        <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()" class="text-xs font-semibold py-3 px-5">
                             Log Out
                         </x-dropdown-item>
 
@@ -63,13 +63,13 @@
                     <!-- <span class="text-lg font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
 
                     @if (Route::currentRouteName() != 'admin')
-                        <a href="/admin/posts/create" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Create Post</a>
+                        <a href="/admin/posts/create" class="bg-green-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Create Post</a>
                     @endif -->
 
                     
                 @else
-                    <a href="/register" class="bg-yellow-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Register</a>
-                    <a href="/login" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Log In</a>
+                    <a href="/register" class="bg-yellow-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Register</a>
+                    <a href="/login" class="bg-green-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Log In</a>
                 @endauth
                 {{-- only show if not subscribed... --}}
                 <a href="#newsletter" class="text-xl transition-colors duration-300 text-blue-500 flex hover:bg-gray-200 px-5 py-3 rounded-full">
@@ -80,16 +80,16 @@
 
         @yield('content')
 
-        <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+        <footer id="newsletter" class="bg-gray-100 hover:bg-gray-200 border border-black border-opacity-5 text-center py-16 px-10 mt-6">
             {{-- <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto mb-6" style="width: 145px;"> --}}
             <img src="/images/html-logo.jpg" alt="" class="mx-auto mb-6 rounded-xl" style="width: 145px;">
-            <h5 class="text-3xl">Receive the latest news & info from <a href="#" class="font-bold text-slate-800">Develop With Aric</a></h5>
-            <p class="text-sm mt-6">Enter a valid email address to subscribe!</p>
+            <h5 class="text-3xl">Receive the latest news from <a href="#" class="font-bold text-slate-800">Develop With Aric &nbsp; <span class="text-blue-500 font-bold">< /></span></a></h5>
+            <p class="text-sm mt-6">Enter your email address to subscribe!</p>
 
             <div class="mt-6">
                 <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
 
-                    <form method="POST" action="/newsletter" class="lg:flex text-sm">
+                    <form method="POST" action="/newsletter" class="bg-white rounded-full lg:flex text-sm">
                         @csrf
 
                         <div class="lg:py-3 lg:px-5 flex items-center">

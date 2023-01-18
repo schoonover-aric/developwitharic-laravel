@@ -1,7 +1,10 @@
-<header class="max-w-xl mx-auto mt-10 text-center">
-    <h1 class="text-4xl mb-6">
-        Latest <span class="text-blue-500">Develop With Aric</span> News
+<header class="max-w-4xl mx-auto mt-28 text-center">
+    <h1 class="text-2xl font-semibold mb-6">
+        Search the latest news | <span class="text-blue-500"><a href="/admin/posts/create">Create a post</a></span> | Leave a comment!
     </h1>
+    {{-- <h1 class="text-4xl mb-6">
+        Latest <span class="text-blue-500">Develop With Aric</span> News
+    </h1> --}}
     {{-- <p>
         <a href="#newsletter" class="bg-gray-200 hover:bg-gray-300 text-xl font-bold px-5 py-3 border border-black rounded-full">
             Subscribe for Updates

@@ -3,7 +3,7 @@
 @section('content')
     @include('posts._header')
 
-    <main class="max-w-6xl mx-auto mt-6 lg:mt-10 space-y-6">
+    <main class="max-w-7xl mx-auto lg:mt-10 px-4">
         @if ($posts->count())
             <x-posts-grid :posts="$posts" />
         {{-- //show pagination --}}
