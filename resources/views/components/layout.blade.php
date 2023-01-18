@@ -22,7 +22,7 @@
     <section> <!-- class="p-6" -->
         <nav class="fixed z-50 opacity-90 top-0 left-0 right-0 px-14 py-2 border-b-4 border-indigo-500 bg-indigo-200 md:flex md:justify-between md:items-center">
             <div>
-                <a href="/" class="transition-colors duration-300 hover:bg-gray-200 text-xl font-bold flex px-5 py-3 rounded-full">
+                <a href="/" class="transition-colors duration-300 hover:bg-gray-200 text-xl font-bold flex px-5 py-2 rounded-full">
                     Develop With Aric &nbsp; <span class="text-blue-500 font-bold">< /></span>
                     {{-- <img src="/images/html-logo.jpg" alt="icky"> --}}
                     <!-- <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16"> -->
@@ -68,8 +68,8 @@
 
                     
                 @else
-                    <a href="/register" class="bg-yellow-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Register</a>
-                    <a href="/login" class="bg-green-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">Log In</a>
+                    <a href="/register" class="bg-yellow-500 hover:bg-yellow-400 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 mx-2">Register</a>
+                    <a href="/login" class="bg-green-500 hover:bg-green-400 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 mx-2">Log In</a>
                 @endauth
                 {{-- only show if not subscribed... --}}
                 <a href="#newsletter" class="text-xl transition-colors duration-300 text-blue-500 flex hover:bg-gray-200 px-5 py-3 rounded-full">
