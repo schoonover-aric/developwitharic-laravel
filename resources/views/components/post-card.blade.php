@@ -30,8 +30,8 @@
 
             <div class="text-sm mt-4">
                 <p>
-                    @if ($post->body)
-                        {{ $post->body }}
+                    @if ($post->excerpt)
+                        {{ $post->excerpt }}
                     @else
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
