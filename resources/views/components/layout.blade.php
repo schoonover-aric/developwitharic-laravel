@@ -42,14 +42,14 @@
                                 </svg>
                             </button>
                         </x-slot>
-                        @admin
+                        {{-- @admin --}}
                             <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')" class="text-xs font-semibold py-3 px-5">
                                 Dashboard
                             </x-dropdown-item>
                             <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')" class="text-xs font-semibold py-3 px-5">
                                 Create Post
                             </x-dropdown-item>
-                        @endadmin
+                        {{-- @endadmin --}}
                         <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()" class="text-xs font-semibold py-3 px-5">
                             Log Out
                         </x-dropdown-item>
